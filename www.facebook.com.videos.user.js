@@ -14,7 +14,6 @@
 var FacebookVideos = new function(){
 
   this.loginBanner = function(){
-    // removes login banner
     var loginBannerInclosure = function(){
       var loginBanner = document.getElementById('u_0_c');
       if(loginBanner != null){
@@ -26,15 +25,30 @@ var FacebookVideos = new function(){
 
   this.shareActionLink = function(){
     var shareActionLinkInclosure = function(){
-      var shareActionLink = jQuery("A[class*='share_action_link']");
-      if(shareActionLink.length == 1){
-        var el3399 = shareActionLink.parent().parent().parent().parent().parent("DIV[class*='_3399']");
-        if(el3399.length == 1){
-          el3399.hide();
+      var formU01d = jQuery("FORM[id^='u_0_'][class*='commentable_item']");
+      formU01d.children().each(function(index,element){
+        if(element.className == '_7f6e'){
+          jQuery(element).children().each(function(index,element){
+            if(element.className == '_7a9u'){
+              var div68wo = element.children[0];
+              if(div68wo.className == '_68wo'){
+                var div3vum = div68wo.children[0];
+                if(div3vum.className == '_3vum'){
+                  div3vum.style.borderBottom = 'none';
+                }
+              }
+              var div7a9v = element.children[1];
+              if(div7a9v.className == '_7a9v'){
+                jQuery(div7a9v).hide();
+              }
+              return false;
+            }
+          });
+          return false;
         }
-      }
+      });
     }
-    setTimeout(shareActionLinkInclosure,2300);
+    setTimeout(shareActionLinkInclosure,3000);
   }
 
   // id 'pagelet_rhc_footer' element
