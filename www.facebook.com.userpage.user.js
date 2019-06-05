@@ -23,6 +23,21 @@ var FacebookUserPage = new function(){
     setTimeout(loggedOutSignUpDesktopInclosure,2100);
   }
 
+  this.pageletSearch = function(){
+    var pageletSearchInclosure = function(){
+      jQuery(function(){
+        var pageletSearch = jQuery("BODY > DIV[class*='_li'] > DIV#globalContainer DIV#contentArea > DIV[id*='pagelet_timeline'] > DIV[class*='timelineLoggedOut'] > DIV[class*='clearfix'] > DIV[class*='LoggedOutRight'] DIV#pagelet_search");
+        if(pageletSearch.length == 1){
+          var pgltSrchParent = pageletSearch.parent("DIV[class*='_4-u2']");
+          if(pgltSrchParent.length == 1){
+            pgltSrchParent.hide();
+          }
+        }
+      });
+    }
+    setTimeout(pageletSearchInclosure,2100);
+  }
+
   this.pageletPeopleSameName = function(){
     var pageletPeopleSameNameInclosure = function(){
       var pageletPeopleSameName = jQuery("BODY > DIV[class*='_li'] > DIV#globalContainer DIV#contentArea > DIV[id*='pagelet_timeline'] > DIV[class*='timelineLoggedOut'] > DIV[class*='clearfix'] > DIV[class*='LoggedOutRight'] > DIV#pagelet_people_same_name");
@@ -36,4 +51,5 @@ var FacebookUserPage = new function(){
 }
 
 FacebookUserPage.loggedOutSignUpDesktop();
+FacebookUserPage.pageletSearch();
 FacebookUserPage.pageletPeopleSameName();
