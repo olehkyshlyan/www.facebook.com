@@ -25,28 +25,14 @@ var FacebookVideos = new function(){
 
   this.shareActionLink = function(){
     var shareActionLinkInclosure = function(){
-      var formU01d = jQuery("FORM[id^='u_0_'][class*='commentable_item']");
-      formU01d.children().each(function(index,element){
-        if(element.className == '_7f6e'){
-          jQuery(element).children().each(function(index,element){
-            if(element.className == '_7a9u'){
-              var div68wo = element.children[0];
-              if(div68wo.className == '_68wo'){
-                var div3vum = div68wo.children[0];
-                if(div3vum.className == '_3vum'){
-                  div3vum.style.borderBottom = 'none';
-                }
-              }
-              var div7a9v = element.children[1];
-              if(div7a9v.className == '_7a9v'){
-                jQuery(div7a9v).hide();
-              }
-              return false;
-            }
-          });
-          return false;
-        }
-      });
+      var div3vum = jQuery("BODY DIV#globalContainer DIV#stream_pagelet FORM[class*='commentable_item'] DIV[class*='_68wo'] > DIV[class*='_3vum']");
+      if(div3vum.length == 1){
+        div3vum.css({"border-bottom":"none"});
+      }
+      var div3399 = jQuery("BODY DIV#globalContainer DIV#stream_pagelet FORM[class*='commentable_item'] DIV[class*='_57w'] > DIV[class*='_3399']").eq(1);
+      if(div3399.length == 1){
+        div3399.hide();
+      }
     }
     setTimeout(shareActionLinkInclosure,3000);
   }
