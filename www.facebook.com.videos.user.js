@@ -7,7 +7,7 @@
 // @author       oleh.kyshlyan
 // @match        http://www.facebook.com/*/videos/*
 // @match        https://www.facebook.com/*/videos/*
-// @require      https://code.jquery.com/jquery-3.3.1.min.js
+// @require      https://code.jquery.com/jquery-3.4.0.min.js
 // @grant        none
 // ==/UserScript==
 
@@ -29,9 +29,10 @@ var FacebookVideos = new function(){
       if(div3vum.length == 1){
         div3vum.css({"border-bottom":"none"});
       }
-      var div3399 = jQuery("BODY DIV#globalContainer DIV#stream_pagelet FORM[class*='commentable_item'] DIV[class*='_57w'] > DIV[class*='_3399']").eq(1);
-      if(div3399.length == 1){
-        div3399.hide();
+
+      var div7a9v = jQuery("BODY DIV#globalContainer DIV#stream_pagelet FORM[class*='commentable_item'] DIV[class*='_7a9v']");
+      if(div7a9v.length == 1){
+        div7a9v.hide();
       }
     }
     setTimeout(shareActionLinkInclosure,3000);
